@@ -81,6 +81,17 @@ code.hljs {
   padding: 20px 0;
 }
 
+.post-type {
+  font-size: 12px;
+  background: gray;
+  color: white;
+  padding: 4px;
+  margin-right: 6px;
+  border-radius: 5px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 .container .item.mb-5 .row.g-3 {
   display: flex;
   justify-content: center;

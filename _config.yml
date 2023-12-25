@@ -37,27 +37,30 @@ icerik:
     name: Kodlama
     url: kodlama
     icon: terminal
-    content: >-
+    desc: >-
       Çeşitli yazılım dillerini birlikte öğrenebileceğimiz yazılarım.
-    icerik:
+    alticerik:
       -
         name: Python
         url: python
         icon: python
-        content: >- 
+        desc: >- 
           Nesne yönelimli, yorumlamalı, birimsel ve etkileşimli yüksek seviyeli bir programlama dili.
       -
         name: Javascript
         url: javascript
         icon: js
-        content: >-
+        desc: >-
           HTML ve CSS ile birlikte World Wide Web'in temel teknolojilerinden biri olan programlama dili
   -
     name: Yaşam
     url: yaşam
     icon: globe
-    content: >-
+    desc: >-
       Yaşamımdan olayları ve düşüncelerimi paylaştığım çeşitli yazılar.
+    alticerik:
+      -
+        
 
 # Build settings
 markdown: kramdown
