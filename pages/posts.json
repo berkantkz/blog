@@ -1,0 +1,16 @@
+---
+title: api
+permalink: /posts.json
+---
+{
+    {% for post in site.posts %}
+    {
+        "number" : "{% if post.number %}{{post.number}}{%else%}0{%endif%}",
+        "title" : "{{post.title}}",
+        "content" : {{post.content | jsonify}},
+        "date" : "{{post.date}}",
+        "category" : [{% for category in post.category %}"{{category}}"{%if forloop.last == false%},{%endif%}{%endfor%}],
+        "time_to_read" : {{post.content | reading_time}}
+    }{%if forloop.last == false %},{%endif%}
+    {% endfor %}
+}

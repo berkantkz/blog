@@ -1,0 +1,79 @@
+title: blog berkantkz
+email: info@berkantkz.com
+description: >- 
+  yaşamımla ilgili gönderilerim, eğitici-öğretici bilgilendirmelerimin hepsi bu blogda.
+baseurl: "" 
+url: ""
+permalink: :categories/:title
+
+social:
+  -
+    icon: github
+    url: https://github.com/berkantkz
+  -
+    icon: instagram
+    url: https://instagram.com/berkantkz
+  -
+    icon: twitter
+    url: https://twitter.com/berkantkz_
+  -
+    icon: facebook
+    url: https://facebook.com/berkantkz
+  -
+    icon: telegram
+    url: https://t.me/berkantkz
+  -
+    icon: linkedin
+    url: https://linkedin.com/in/berkantkz
+  -
+    icon: youtube
+    url: https://youtube.com/@berkantkz
+  -
+    icon: reddit
+    url: https://reddit.com/u/berkantkz
+
+icerik:
+  - 
+    name: Kodlama
+    url: kodlama
+    icon: terminal
+    content: >-
+      Çeşitli yazılım dillerini birlikte öğrenebileceğimiz yazılarım.
+    icerik:
+      -
+        name: Python
+        url: python
+        icon: python
+        content: >- 
+          Nesne yönelimli, yorumlamalı, birimsel ve etkileşimli yüksek seviyeli bir programlama dili.
+      -
+        name: Javascript
+        url: javascript
+        icon: js
+        content: >-
+          HTML ve CSS ile birlikte World Wide Web'in temel teknolojilerinden biri olan programlama dili
+  -
+    name: Yaşam
+    url: yaşam
+    icon: globe
+    content: >-
+      Yaşamımdan olayları ve düşüncelerimi paylaştığım çeşitli yazılar.
+
+# Build settings
+markdown: kramdown
+# plugins:
+#   - jekyll-feed
+
+reading_time:
+  second_plural: "saniye"
+  minute_singular: "dakika"
+  minute_plural: "dakika"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

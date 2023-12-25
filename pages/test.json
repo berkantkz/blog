@@ -1,0 +1,10 @@
+---
+permalink: /test.json
+---
+[ {
+{% for c in site.categories %}
+    'size': {{c.size}},
+    'c': {{c | jsonify}},
+    'item': {{c[1][0].categories | jsonify}},
+{%endfor%}
+}]

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+	{%include head.html%}
+</head>
+
+<body>
+	{% include header.html %}
+
+	<div class="main-wrapper">
+		<article class="blog-post px-3 py-5 p-md-5">
+			<div class="directory"> 
+				<a href="/">Ana Sayfa</a> {% assign arr = "" | split: ',' %}{% for category in page.category %}{% assign i = forloop.index | minus: 1%}{% assign arr = arr | push: page.category[i] %}{% assign arr = arr | push: '/' %} <span>></span> <a href="/{{arr}}">{{page.category[i]}}</a>{%endfor%} <span>></span> <span>{{page.title}}</span>
+			</div>
+			<div class="container single-col-max-width">
+				<header class="blog-post-header">
+					<h2 class="title mb-2">{{page.title}}</h2>
+					<div class="meta mb-3">
+						<span class="date">{{page.date | date: "%-d %B %Y" }}</span>
+						<span class="time">Okumak için {{page.content | reading_time}} yeterli.</span>
+						<!-- <span class="comment">
+							<a  class="text-link"></a>
+						</span> -->
+					</div>
+				</header>
+
+				<div class="blog-post-body">
+					{{page.content}}
+				</div>
+
+				{% assign cat = page.category %}
+				{% for post in site.categories[cat] %}
+				{% if post.url == page.url %}
+				{% assign post_index0 = forloop.index0 %}
+				{% assign post_index1 = forloop.index %}
+				{% endif %}
+				{% endfor %}
+
+				{% for post in site.categories[cat] %}
+				{% if post_index0 == forloop.index %}
+				{% assign next_post = post %}
+				{% endif %}
+				{% if post_index1 == forloop.index0 %}
+				{% assign prev_post = post %}
+				{% endif %}
+				{% endfor %}
+
+				<nav class="blog-nav nav nav-justified my-5">
+					{% if prev_post %}
+					<a class="nav-link-prev nav-item nav-link rounded-left" href="{{ prev_post.url }}">Geri: {% if
+						prev_post.number %}{{prev_post.number}} - {%endif%}{{prev_post.title}}<i
+							class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+					{%endif%}
+					{% if next_post %}
+					<a class="nav-link-next nav-item nav-link rounded-right" href="{{ next_post.url }}">İleri: {% if
+						next_post.number %}{{next_post.number}} - {%endif%}{{ next_post.title }}<i
+							class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+					{%endif%}
+				</nav>
+
+				<div class="blog-comments-section" id="yorumlar">
+					<div id="disqus_thread"></div>
+					<script>
+						/**
+						*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+						*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+						/*
+						var disqus_config = function () {
+						this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+						this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+						};
+						*/
+						(function () { // DON'T EDIT BELOW THIS LINE
+							var d = document, s = d.createElement('script');
+							s.src = 'https://berkantkzblog.disqus.com/embed.js';
+							s.setAttribute('data-timestamp', +new Date());
+							(d.head || d.body).appendChild(s);
+						})();
+					</script>
+					<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+							powered by Disqus.</a></noscript>
+					<script id="dsq-count-scr" src="//berkantkzblog.disqus.com/count.js" async></script>
+				</div><!--//blog-comments-section-->
+			</div><!--//container-->
+		</article>
+
+		{% include promo.html %}
+
+		{% include footer.html %}
+
+	</div><!--//main-wrapper-->
+
+	<!-- Javascript -->
+	<script src="/assets/plugins/popper.min.js"></script>
+	<script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Page Specific JS -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="/assets/js/blog.js"></script>
+</body>
+
+</html>
