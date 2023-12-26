@@ -60,7 +60,7 @@ icerik:
       Yaşamımdan olayları ve düşüncelerimi paylaştığım çeşitli yazılar.
     alticerik:
       -
-        
+
 
 # Build settings
 markdown: kramdown
@@ -71,6 +71,9 @@ reading_time:
   second_plural: "saniye"
   minute_singular: "dakika"
   minute_plural: "dakika"
+
+include:
+  - _plugins/
 
 exclude:
   - Gemfile
