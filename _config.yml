@@ -67,14 +67,6 @@ markdown: kramdown
 # plugins:
 #   - jekyll-feed
 
-reading_time:
-  second_plural: "saniye"
-  minute_singular: "dakika"
-  minute_plural: "dakika"
-
-include:
-  - _plugins/
-
 exclude:
   - Gemfile
   - Gemfile.lock
